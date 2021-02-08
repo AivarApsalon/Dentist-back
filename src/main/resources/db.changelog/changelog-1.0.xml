@@ -1,0 +1,38 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="Aivar">
+
+        <createTable tableName="dentist_list">
+            <column name="dentist_id" type="int" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="dentist_name" type="text">
+            </column>
+        </createTable>
+
+        <createTable tableName="dentist_registrations">
+            <column name="registration_id" type="int">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="dentist_id" type="int">
+                <constraints foreignKeyName="fk_dentist_registrations_dentist_list"
+                             references="dentist_list(dentist_id)"/>
+            </column>
+            <column name="date" type="int">
+            </column>
+            <column name="time" type="int">
+            </column>
+            <column name="customers_name" type="text">
+            </column>
+            <column name="customers_id_card_nr" type="text">
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
