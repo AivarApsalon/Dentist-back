@@ -6,29 +6,29 @@
 
     <changeSet id="1" author="Aivar">
 
-        <createTable tableName="dentist_list">
-            <column name="dentist_id" type="int" autoIncrement="true">
+        <createTable tableName="dentist">
+            <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
             <column name="dentist_name" type="text">
             </column>
         </createTable>
 
-        <createTable tableName="dentist_registrations">
-            <column name="registration_id" type="int">
+        <createTable tableName="registrations">
+            <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="dentist_id" type="int">
-                <constraints foreignKeyName="fk_dentist_registrations_dentist_list"
-                             references="dentist_list(dentist_id)"/>
+            <column name="date" type="date">
             </column>
-            <column name="date" type="int">
-            </column>
-            <column name="time" type="int">
+            <column name="time" type="time">
             </column>
             <column name="customers_name" type="text">
             </column>
             <column name="customers_id_card_nr" type="text">
+            </column>
+            <column name="dentist_id" type="int">
+                <constraints foreignKeyName="fk_registrations_dentist"
+                             references="dentist(id)"/>
             </column>
 
         </createTable>
