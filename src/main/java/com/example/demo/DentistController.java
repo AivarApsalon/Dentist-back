@@ -40,8 +40,8 @@ public class DentistController {
     }
 
     @PostMapping("add-registration")
-    public void addRegistration(@RequestBody Registrations registrations) {
-        registrationsService.addRegistration(registrations);
+    public void addRegistration(@RequestBody AddRegistrationRequest registration) {
+        registrationsService.addRegistration(registration);
     }
 
     @DeleteMapping("delete-registration/{id}")
