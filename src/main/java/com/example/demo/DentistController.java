@@ -9,18 +9,12 @@ import java.util.List;
 
 public class DentistController {
 
-
     private final DentistService dentistService;
     private final RegistrationsService registrationsService;
 
     public DentistController(DentistService dentistService, RegistrationsService registrationsService) {
         this.dentistService = dentistService;
         this.registrationsService = registrationsService;
-    }
-
-    @GetMapping("dentist-name/{id}")
-    public String getDentistName(@PathVariable("id") Integer id) {
-        return dentistService.getDentistName(id);
     }
 
     @GetMapping("dentist-list")
@@ -30,9 +24,14 @@ public class DentistController {
     }
 
     @GetMapping("registrations")
-    public List<Registrations> registrations() {
+    public List<RegistrationDto> registrations() {
         return registrationsService.registrations();
 
+    }
+
+    @GetMapping("registration-by-id/{id}")
+    public RegistrationDto registrationById(@PathVariable("id") Integer id) {
+        return new RegistrationDto(registrationsService.registrationById(id));
     }
 
     @GetMapping("registrations-by-dentist-id/{id}")
@@ -45,10 +44,9 @@ public class DentistController {
         registrationsService.addRegistration(registrations);
     }
 
-    @DeleteMapping("delete-registration")
-    public void deleteRegistration(@RequestBody Registrations registrations) {
-        registrationsService.deleteRegistration(registrations);
+    @DeleteMapping("delete-registration/{id}")
+    public void deleteRegistration(@PathVariable("id") Integer id) {
+        registrationsService.deleteRegistration(id);
     }
-
 
 }

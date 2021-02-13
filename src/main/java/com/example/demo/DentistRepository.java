@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface DentistRepository extends JpaRepository<Dentist, Integer> {
     List<Dentist> findByDentistNameContaining(String name);
-
+    List<Dentist> findByDentistName(String name);
 }

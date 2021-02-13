@@ -1,0 +1,148 @@
+body {
+    margin: 0px;
+    background-color: #253c4d;
+    font-family: 'Work Sans', sans-serif;
+
+}
+
+.container {
+    color: darkgrey;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 30px;
+    word-spacing: 4px;
+    width: 90%;
+    height: auto;
+    margin-left: 50px;
+
+}
+
+header {
+    background-color: #48558a;
+    margin: auto;
+    height: 120px;
+}
+
+header::after {
+
+    display: table;
+    clear: both;
+}
+
+nav {
+    height: 100px;
+    float: right;
+    margin-right: 60px;
+    padding: 8px;
+}
+
+nav ul {
+
+    padding: 0px;
+    list-style: none;
+    margin-top: 3px;
+
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 27px;
+    padding-top: 30px;
+    margin-top: 10px;
+    position: relative;
+}
+
+nav a {
+    color: darkgray;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+
+}
+
+nav a:hover {
+    color: #253c4d;
+
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: darkgray;
+
+    position: absolute;
+    top: 25px;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+p {
+    color: darkgrey;
+    font-family: 'Arial Narrow';
+    font-size: 20px;
+    text-align: right;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 992px;
+}
+
+h1 {
+    color: darkgray;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 23px;
+    margin-right: 992px;
+    text-align: right;
+    padding-top: 25px;
+
+}
+
+
+.aivar {
+    height: 1px;
+    border-width: 0;
+    color: gray;
+    background-color: darkgray;
+    margin-left: 20px;
+    margin-right: 992px;
+}
+
+.bank_name {
+    font-size: 40px;
+    padding-right: 20px;
+    margin-bottom: 9px;
+    margin-top: 6px;
+    border-right: solid 1px darkgrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

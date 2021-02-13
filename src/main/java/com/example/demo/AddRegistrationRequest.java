@@ -1,26 +1,16 @@
 package com.example.demo;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-@Entity
-public class Registrations {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class AddRegistrationRequest {
     private Integer id;
     private LocalDate date;
     private LocalTime time;
     private String firstName;
     private String lastName;
     private String idCardNr;
-
-    @ManyToOne
-    @JoinColumn(name = "dentist_id")
-    private Dentist dentist;
-
-    public Registrations() {
-    }
+    private Integer dentistId;
 
     public Integer getId() {
         return id;
@@ -70,12 +60,11 @@ public class Registrations {
         this.idCardNr = idCardNr;
     }
 
-    public Dentist getDentist() {
-        return dentist;
+    public Integer getDentistId() {
+        return dentistId;
     }
 
-    public void setDentist(Dentist dentist) {
-        this.dentist = dentist;
+    public void setDentistId(Integer dentistId) {
+        this.dentistId = dentistId;
     }
-
 }

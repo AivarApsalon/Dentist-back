@@ -13,31 +13,45 @@ public class RegistrationsService {
     private RegistrationsRepository registrationsRepository;
 
     @Transactional
-    public List<Registrations> registrations() {
+    public List<RegistrationDto> registrations() {
         List<Registrations> registrations = registrationsRepository.findAll();
-        return registrations;
+        List<RegistrationDto> registrationDto = new ArrayList<>();
+
+        for (Registrations registration : registrations) {
+            registrationDto.add(new RegistrationDto(registration));
+        }
+        return registrationDto;
+
+    }
+
+    public void addRegistration(AddRegistrationRequest request) {
+        Registrations registrations = new Registrations();
+        registrations.setIdCardNr(request.getIdCardNr());
+        registrations.setLastName(request.getLastName());
+        registrations.setFirstName(request.getFirstName());
+        registrations.setTime(request.getTime());
+        registrations.setDate(request.getDate());
+        Dentist dentist = dentistRepository.getOne(request.getDentistId());
+        registrations.setDentist(dentist);
+        registrationsRepository.save(registrations);
+
+    }
+
+    public void deleteRegistration(Integer id) {
+        Registrations entity = new Registrations();
+        entity.setId(id);
+        registrationsRepository.delete(entity);
     }
 
     @Transactional
     public List<Registrations> registrationsByDentistId(Integer id) {
-        List<Registrations> registrations = registrationsRepository.findRegistrationsByDentistId(id);
-        return registrations;
+        return registrationsRepository.findRegistrationsByDentistId(id);
+
     }
 
-    public void addRegistration(Registrations registrations) {
-        Registrations entity = new Registrations();
-        entity.setDate(registrations.getDate());
-        entity.setTime(registrations.getTime());
-        entity.setCustomersName(registrations.getCustomersName());
-        entity.setCustomersIdCardNr(registrations.getCustomersIdCardNr());
-        entity.setDentistId(registrations.getDentistId());
-        registrationsRepository.save(entity);
-    }
-
-    public void deleteRegistration(Registrations registrations) {
-        Registrations entity = new Registrations();
-        entity.setId(registrations.getId());
-        registrationsRepository.delete(entity);
+    @Transactional
+    public Registrations registrationById(Integer id) {
+        return registrationsRepository.getOne(id);
     }
 
 

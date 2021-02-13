@@ -10,13 +10,12 @@ import java.util.List;
 public class DentistService {
 
     @Autowired
-
     private DentistRepository dentistRepository;
 
 
-    public String getDentistName(Integer id) {
-        Dentist dentistList = dentistRepository.getOne(id);
-        return dentistList.getDentistName();
+    public Dentist getDentist(Integer id) {
+        Dentist dentist = dentistRepository.getOne(id);
+        return dentist;
     }
 
     @Transactional

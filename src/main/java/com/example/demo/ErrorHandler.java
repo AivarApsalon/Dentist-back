@@ -10,7 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 public class ErrorHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(DentistException.class)
-    public ResponseEntity<ResponseError> handleBank2Exception(DentistException e) {
+    public ResponseEntity<ResponseError> handleDentistException(DentistException e) {
         ResponseError error = new ResponseError();
         error.setMessage(e.getMessage());
         return new ResponseEntity<>(error, new HttpHeaders(), HttpStatus.BAD_REQUEST);

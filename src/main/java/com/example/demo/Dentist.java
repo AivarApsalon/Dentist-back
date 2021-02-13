@@ -1,9 +1,7 @@
 package com.example.demo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Dentist {
@@ -12,6 +10,17 @@ public class Dentist {
     private Integer id;
     private String dentistName;
 
+    @OneToMany(mappedBy = "dentist")
+    private List <Registrations> registrations;
+
+
+    public List<Registrations> getRegistrations() {
+        return registrations;
+    }
+
+    public void setRegistrations(List<Registrations> registrations) {
+        this.registrations = registrations;
+    }
 
     public String getDentistName() {
         return dentistName;
