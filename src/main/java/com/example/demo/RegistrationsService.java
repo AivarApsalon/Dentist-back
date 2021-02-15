@@ -25,7 +25,6 @@ public class RegistrationsService {
             registrationDto.add(new RegistrationDto(registration));
         }
         return registrationDto;
-
     }
 
     public void addRegistration(AddRegistrationRequest request) {
@@ -38,7 +37,6 @@ public class RegistrationsService {
         Dentist dentist = dentistRepository.getOne(request.getDentistId());
         registrations.setDentist(dentist);
         registrationsRepository.save(registrations);
-
     }
 
     public void deleteRegistration(Integer id) {
@@ -50,7 +48,6 @@ public class RegistrationsService {
     @Transactional
     public List<Registrations> registrationsByDentistId(Integer id) {
         return registrationsRepository.findRegistrationsByDentistId(id);
-
     }
 
     @Transactional
@@ -58,5 +55,19 @@ public class RegistrationsService {
         return registrationsRepository.getOne(id);
     }
 
+    @Transactional
+    public void changeRegistration(Integer id, AddRegistrationRequest request) {
+        Registrations registrations = new Registrations();
+        registrations.setId(id);
+        registrations.setIdCardNr(request.getIdCardNr());
+        registrations.setLastName(request.getLastName());
+        registrations.setFirstName(request.getFirstName());
+        registrations.setTime(request.getTime());
+        registrations.setDate(request.getDate());
+        Dentist dentist = dentistRepository.getOne(request.getDentistId());
+        registrations.setDentist(dentist);
+        registrationsRepository.save(registrations);
+
+    }
 
 }

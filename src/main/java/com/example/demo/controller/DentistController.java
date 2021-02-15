@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.example.demo.controller;
 
+import com.example.demo.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,15 +19,13 @@ public class DentistController {
     }
 
     @GetMapping("dentist-list")
-    public List<Dentist> dentists() {
+    public List<DentistDto> dentists() {
         return dentistService.dentists();
-
     }
 
     @GetMapping("registrations")
     public List<RegistrationDto> registrations() {
         return registrationsService.registrations();
-
     }
 
     @GetMapping("registration-by-id/{id}")
@@ -48,5 +47,11 @@ public class DentistController {
     public void deleteRegistration(@PathVariable("id") Integer id) {
         registrationsService.deleteRegistration(id);
     }
+
+    @PutMapping("change-registration/{id}")
+    public void changeRegistration(@PathVariable("id") Integer id, @RequestBody AddRegistrationRequest registration) {
+        registrationsService.changeRegistration(id, registration);
+    }
+
 
 }

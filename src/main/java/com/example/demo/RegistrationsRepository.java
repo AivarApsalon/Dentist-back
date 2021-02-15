@@ -8,4 +8,5 @@ import java.util.List;
 public interface RegistrationsRepository extends JpaRepository<Registrations, Integer> {
      List<Registrations> findRegistrationsByDentistId(Integer id);
 
+
 }
