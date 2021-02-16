@@ -1,13 +1,8 @@
-package com.example.demo;
+package com.example.demo.dto;
 
-public class DentistDto {
+public class DentistListDTO {
     private Integer id;
     private String dentistName;
-
-    public DentistDto(Dentist dentist) {
-        this.id = dentist.getId();
-        this.dentistName = dentist.getDentistName();
-    }
 
     public Integer getId() {
         return id;

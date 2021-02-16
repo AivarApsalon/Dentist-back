@@ -1,7 +1,8 @@
-package com.example.demo;
+package com.example.demo.service;
 
 import com.example.demo.Dentist;
-import com.example.demo.DentistRepository;
+import com.example.demo.dto.DentistDto;
+import com.example.demo.repository.DentistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

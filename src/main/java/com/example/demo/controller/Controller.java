@@ -1,6 +1,12 @@
 package com.example.demo.controller;
 
 import com.example.demo.*;
+import com.example.demo.dto.AddRegistrationRequest;
+import com.example.demo.dto.DentistDto;
+import com.example.demo.dto.RegistrationDto;
+import com.example.demo.dto.RegistrationsByDentistId;
+import com.example.demo.service.DentistService;
+import com.example.demo.service.RegistrationsService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -8,12 +14,12 @@ import java.util.List;
 @RequestMapping("dentist")
 @RestController
 
-public class DentistController {
+public class Controller {
 
     private final DentistService dentistService;
     private final RegistrationsService registrationsService;
 
-    public DentistController(DentistService dentistService, RegistrationsService registrationsService) {
+    public Controller(DentistService dentistService, RegistrationsService registrationsService) {
         this.dentistService = dentistService;
         this.registrationsService = registrationsService;
     }
@@ -34,7 +40,7 @@ public class DentistController {
     }
 
     @GetMapping("registrations-by-dentist-id/{id}")
-    public List<Registrations> registrationsByDentistId(@PathVariable("id") Integer id) {
+    public List<RegistrationsByDentistId> registrationsByDentistId(@PathVariable("id") Integer id) {
         return registrationsService.registrationsByDentistId(id);
     }
 

@@ -1,9 +1,12 @@
-package com.example.demo;
+package com.example.demo.dto;
+
+import com.example.demo.Registrations;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class AddRegistrationRequest {
+public class RegistrationsByDentistId {
+
     private Integer id;
     private LocalDate date;
     private LocalTime time;
@@ -11,6 +14,19 @@ public class AddRegistrationRequest {
     private String lastName;
     private String idCardNr;
     private Integer dentistId;
+    private String dentistName;
+
+    public RegistrationsByDentistId(Registrations registration) {
+        this.id = registration.getId();
+        this.date = registration.getDate();
+        this.time = registration.getTime();
+        this.firstName = registration.getFirstName();
+        this.lastName = registration.getLastName();
+        this.idCardNr = registration.getIdCardNr();
+        this.dentistId = registration.getDentist().getId();
+        this.dentistName = registration.getDentist().getDentistName();
+
+    }
 
     public Integer getId() {
         return id;
@@ -66,5 +82,13 @@ public class AddRegistrationRequest {
 
     public void setDentistId(Integer dentistId) {
         this.dentistId = dentistId;
+    }
+
+    public String getDentistName() {
+        return dentistName;
+    }
+
+    public void setDentistName(String dentistName) {
+        this.dentistName = dentistName;
     }
 }

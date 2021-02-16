@@ -1,4 +1,6 @@
-package com.example.demo;
+package com.example.demo.dto;
+
+import com.example.demo.Registrations;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.exception;
 
+import com.example.demo.exception.DentistException;
+import com.example.demo.exception.ResponseError;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
