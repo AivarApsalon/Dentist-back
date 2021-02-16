@@ -5,6 +5,7 @@ import com.example.demo.Registrations;
 import com.example.demo.dto.AddRegistrationRequest;
 import com.example.demo.dto.RegistrationDto;
 import com.example.demo.dto.RegistrationsByDentistId;
+import com.example.demo.exception.DentistException;
 import com.example.demo.repository.DentistRepository;
 import com.example.demo.repository.RegistrationsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,10 +41,13 @@ public class RegistrationsService {
         for (Registrations registration : registrations) {
             registrationsByDentistId.add(new RegistrationsByDentistId(registration));
         }
-        return registrationsByDentistId;
+        if (registrationsByDentistId == null) {
+            throw new DentistException("No Registrations!");
+        } else {
+            return registrationsByDentistId;
+        }
+
     }
-
-
 
     public void addRegistration(AddRegistrationRequest request) {
         Registrations registrations = new Registrations();
@@ -54,6 +58,10 @@ public class RegistrationsService {
         registrations.setDate(request.getDate());
         Dentist dentist = dentistRepository.getOne(request.getDentistId());
         registrations.setDentist(dentist);
+
+
+
+
         registrationsRepository.save(registrations);
     }
 
