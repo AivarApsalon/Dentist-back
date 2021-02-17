@@ -50,7 +50,6 @@ public class RegistrationsService {
         if (existingRegistration != null) {
             throw new DentistException("This date and time is already taken!");
         }
-
         Registrations registrations = new Registrations();
         registrations.setIdCardNr(request.getIdCardNr());
         registrations.setLastName(request.getLastName());
