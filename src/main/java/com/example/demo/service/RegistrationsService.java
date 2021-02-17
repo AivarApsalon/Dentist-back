@@ -41,15 +41,16 @@ public class RegistrationsService {
         for (Registrations registration : registrations) {
             registrationsByDentistId.add(new RegistrationsByDentistId(registration));
         }
-        if (registrationsByDentistId == null) {
-            throw new DentistException("No Registrations!");
-        } else {
-            return registrationsByDentistId;
-        }
+        return registrationsByDentistId;
 
     }
 
     public void addRegistration(AddRegistrationRequest request) {
+        Registrations existingRegistration = registrationsRepository.findByDentistIdAndDateAndTime(request.getDentistId(), request.getDate(), request.getTime());
+        if (existingRegistration != null) {
+            throw new DentistException("This date and time is already taken!");
+        }
+
         Registrations registrations = new Registrations();
         registrations.setIdCardNr(request.getIdCardNr());
         registrations.setLastName(request.getLastName());
@@ -58,6 +59,7 @@ public class RegistrationsService {
         registrations.setDate(request.getDate());
         Dentist dentist = dentistRepository.getOne(request.getDentistId());
         registrations.setDentist(dentist);
+
 
 
 

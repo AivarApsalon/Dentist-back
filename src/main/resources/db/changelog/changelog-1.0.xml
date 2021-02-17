@@ -36,8 +36,8 @@
 
     </changeSet>
 
-    <changeSet id="" author="">
-        <addUniqueConstraint tableName="registrations" columnNames="date, time, dentist_id"/>
-    </changeSet>
+<!--    <changeSet id="" author="">-->
+<!--        <addUniqueConstraint tableName="registrations" columnNames="date, time, dentist_id"/>-->
+<!--    </changeSet>-->
 
 </databaseChangeLog>

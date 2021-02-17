@@ -12,3 +12,12 @@
 5.1) Kui sul on ideid, kuidas antud rakendust ilusamaks / paremaks / ägedamaks muuta, siis see on koht, kus neid oskuseid näidata saad : )
 Tagasisaatmise juhend:
 Oma kood lae mõnda vabalt kättesaadavasse versioonihalduse süsteemi – näiteks GitHubi või BitBucketisse. Juhul kui sul on oma veebiserver või dropbox, võid ka koodi kokku pakitult sinna laadida ja saata meile lingi – sinu vaba valik. Veendu, et link oleks meile kättesaadav. Veendu, et üles on laetud ainult kõik vajalik projekti kompileerumiseks ja käivitamiseks. Vajadusel lisa dokumentatsioon rakenduse kasutamiseks.
+
+
+## Steps to Setup
+
+**1. Clone the application**
+
+```bash
+git clone https://github.com/coma123/Spring-Boot-Blog-REST-API.git
+```
