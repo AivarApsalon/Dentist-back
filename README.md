@@ -22,7 +22,7 @@ In database is used 2 tables:
 + table name: dentist
 - Rows: id, dentist_name
 
-Important: Please add at least one dentist to that table, before making requests from database!
+Important: Please add at least one dentist into that table, before making requests from database!
 ```
 ```bash
 + Table name: registrations
