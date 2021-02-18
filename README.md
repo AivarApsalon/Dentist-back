@@ -7,7 +7,7 @@ https://github.com/AivarApsalon/Dentist-back
 
 **2. Run**
 ```bash
-`src / main / java / com / example / demo / DemoApplication `
+src / main / java / com / example / demo / DemoApplication 
 ```
 
 **3. Create PostgreSQL database**
