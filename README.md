@@ -1,18 +1,21 @@
 ## Steps to Setup
 
-1. Clone the application
-
+**1. Clone the application**
+```bash
 https://github.com/AivarApsalon/Dentist-back
+```
 
-
-2. Run
-
+**2. Run**
+```bash
 `src / main / java / com / example / demo / DemoApplication `
+```
 
-
-3. Create PostgreSQL database 
+**3. Create PostgreSQL database**
+```bash
 - KÜSIMUS SIIMULE ANDMEBAASI KOHTA!
+```
 
+```bash
 In database is used 2 tables:
 -Table name: dentist
 -Rows: id, dentist_name
