@@ -46,7 +46,7 @@ Important: Please add at least one dentist into that table, before making reques
 
 ```
 
-# Samples of URLs with valid JSON Request Bodys
+### Samples of URLs with valid JSON Request Bodys
 
 Get Dentist List
 ```bash
