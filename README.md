@@ -25,7 +25,7 @@ In database is used 2 tables:
 Important: Please add at least one dentist into that table, before making requests from database!
 ```
 ```bash
-+ Table name: registrations
++ table name: registrations
 - Rows: id, date, time, first_name, last_name, id_card_nr, dentist_id
 ```
 
