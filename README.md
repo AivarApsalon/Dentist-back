@@ -32,7 +32,7 @@ Important: Please add at least one dentist to that table, before making requests
 **4. The app will start running at <http://localhost:8085>**
 
 
-5. Endpoints
+**5. Endpoints**
 
 | Method | Url | Description |
 | ------ | --- | ----------- | 
@@ -43,8 +43,46 @@ Important: Please add at least one dentist to that table, before making requests
 | PUT    | /dentist/change-registration/{registration_id} | Change existing registration |
 | DELETE | /dentist/delete-registration/{registration_id} | Delete existing registration |
 
+**6. Samples of URL-s with valid JSON Request Bodys **
 
+```bash
+/dentist/dentist-list
+```
 
+```bash
+/dentist/registrations
+```
 
+```bash
+/dentist/registrations-by-dentist-id/2
+```
 
+```bash
+/dentist/add-registration
+
+{
+    "date": "2021-03-01",
+    "time": "10:00",
+    "firstName": "John",
+    "lastName": "Smith",
+    "idCardNr": "AA000",
+    "dentistId" : 2
+}
+```
+
+```bash
+/dentist/change-registration/2
+{
+    "date": "2020-11-05",
+    "time": "14:00",
+    "firstName": "John",
+    "lastName": "Smith",
+    "idCardNr": "AA000",
+    "dentistId" : 2
+}
+```
+
+```bash
+/dentist/delete-registration/2
+```
 
