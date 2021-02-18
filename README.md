@@ -34,6 +34,7 @@ Important: Please add at least one dentist into that table, before making reques
 
 **5. Endpoints**
 
+```bash
 | Method | Url | Description |
 | ------ | --- | ----------- | 
 | GET    | /dentist/dentist-list | Get a list of dentists from database | 
@@ -42,6 +43,7 @@ Important: Please add at least one dentist into that table, before making reques
 | POST   | /dentist/add-registration | Add new registration |
 | PUT    | /dentist/change-registration/{registration_id} | Change existing registration |
 | DELETE | /dentist/delete-registration/{registration_id} | Delete existing registration |
+```
 
 **6. Samples of URL-s with valid JSON Request Bodys **
 
