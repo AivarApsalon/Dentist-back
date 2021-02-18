@@ -43,22 +43,28 @@ Important: Please add at least one dentist into that table, before making reques
 | POST   | /dentist/add-registration | Add new registration |
 | PUT    | /dentist/change-registration/{registration_id} | Change existing registration |
 | DELETE | /dentist/delete-registration/{registration_id} | Delete existing registration |
+
 ```
 
-**6. Samples of URL-s with valid JSON Request Bodys **
+**6. Samples of URLs with valid JSON Request Bodys **
 
+
+Get Dentist List
 ```bash
 /dentist/dentist-list
 ```
 
+Get All Registrations
 ```bash
 /dentist/registrations
 ```
 
+Get Registrations By Dentist Id
 ```bash
 /dentist/registrations-by-dentist-id/2
 ```
 
+Add Registration
 ```bash
 /dentist/add-registration
 
@@ -72,6 +78,7 @@ Important: Please add at least one dentist into that table, before making reques
 }
 ```
 
+Change Registration
 ```bash
 /dentist/change-registration/2
 {
@@ -84,6 +91,7 @@ Important: Please add at least one dentist into that table, before making reques
 }
 ```
 
+Delete Registration
 ```bash
 /dentist/delete-registration/2
 ```
