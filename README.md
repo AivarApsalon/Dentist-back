@@ -30,7 +30,11 @@ Important: Please add at least one dentist into that table, before making reques
 ```
 
 **4. The app will start running at <http://localhost:8085>**
-
+```bash
+This can be changed at: 
+application.properties 
+server.port=8085
+```
 
 **5. Endpoints**
 
