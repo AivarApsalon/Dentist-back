@@ -17,17 +17,19 @@ https://github.com/AivarApsalon/Dentist-back
 
 ```bash
 In database is used 2 tables:
++
 -Table name: dentist
+```
 -Rows: id, dentist_name
-
+```
 Important: Please add at least one dentist to that table, before making requests from database!
-
+```
 
 -Table name: registrations
 -Rows: id, date, time, first_name, last_name, id_card_nr, dentist_id
+```
 
-
-4. The app will start running at <http://localhost:8085>
+**4. The app will start running at <http://localhost:8085>**
 
 
 5. Endpoints
