@@ -1,7 +1,10 @@
 ## Steps to Setup
 
-**1. Clone the application**
+1. Clone the application
 
-```bash
-git clone https://github.com/coma123/Spring-Boot-Blog-REST-API.git
-```
+https://github.com/AivarApsalon/Dentist-back
+
+
+2. Run
+
+`src / main / java / com / example / demo / DemoApplication `
