@@ -16,7 +16,8 @@ Database: H2
 ```
 
 ```bash
-Go to browser:  http://localhost:8085/h2-console
+Go to browser:  
+**http://localhost:8085/h2-console**
 Type into terminal: SELECT * FROM DENTIST 
 There you see Table: DENTIST
 ```
@@ -34,24 +35,17 @@ In database is used 2 tables:
 - Rows: id, date, time, first_name, last_name, id_card_nr, dentist_id
 ```
 
-**4. The app will start running at <http://localhost:8085>**
-```bash
-This can be changed at: 
-application.properties 
-server.port=8085
-```
-
 **5. Endpoints**
 
 
 | Method | Url | Description |
 | ------ | --- | ----------- | 
-| GET    | /dentist/dentist-list | Get a list of dentists from database | 
-| GET    | /dentist/registrations | Get all registrations from database | 
-| GET    | /dentist/registrations-by-dentist-id/{dentist_id} | Get all registrations by dentist id | 
-| POST   | /dentist/add-registration | Add new registration |
-| PUT    | /dentist/change-registration/{registration_id} | Change existing registration |
-| DELETE | /dentist/delete-registration/{registration_id} | Delete existing registration |
+| GET    | http://localhost:8085/dentist/dentist-list | Get a list of dentists from database | 
+| GET    | http://localhost:8085/dentist/registrations | Get all registrations from database | 
+| GET    | http://localhost:8085/dentist/registrations-by-dentist-id/{dentist_id} | Get all registrations by dentist id | 
+| POST   | http://localhost:8085/dentist/add-registration | Add new registration |
+| PUT    | http://localhost:8085/dentist/change-registration/{registration_id} | Change existing registration |
+| DELETE | http://localhost:8085/dentist/delete-registration/{registration_id} | Delete existing registration |
 
 
 
@@ -59,22 +53,22 @@ server.port=8085
 
 Get Dentist List
 ```bash
-/dentist/dentist-list
+http://localhost:8085/dentist/dentist-list
 ```
 
 Get All Registrations
 ```bash
-/dentist/registrations
+http://localhost:8085/dentist/registrations
 ```
 
 Get Registrations By Dentist Id
 ```bash
-/dentist/registrations-by-dentist-id/2
+http://localhost:8085/dentist/registrations-by-dentist-id/2
 ```
 
 Add Registration
 ```bash
-/dentist/add-registration
+http://localhost:8085/dentist/add-registration
 
 {
     "date": "2021-03-01",
@@ -88,7 +82,7 @@ Add Registration
 
 Change Registration
 ```bash
-/dentist/change-registration/2
+http://localhost:8085/dentist/change-registration/2
 {
     "date": "2020-11-05",
     "time": "14:00",
@@ -101,6 +95,6 @@ Change Registration
 
 Delete Registration
 ```bash
-/dentist/delete-registration/2
+http://localhost:8085/dentist/delete-registration/2
 ```
 
