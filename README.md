@@ -20,7 +20,7 @@ Database: H2
 + Type into terminal: `SELECT * FROM DENTIST`
 + There you see Table: `DENTIST`
 
-**Important: Please add at least one id and one dentist into that table, before making requests from database!**
+**Important: Please add into DENTIST table at least one id and one dentist, before making requests from database!**
 
 
 **5. Endpoints**
