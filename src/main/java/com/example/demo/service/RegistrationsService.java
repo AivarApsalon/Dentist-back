@@ -58,27 +58,17 @@ public class RegistrationsService {
         registrations.setDate(request.getDate());
         Dentist dentist = dentistRepository.getOne(request.getDentistId());
         registrations.setDentist(dentist);
-
-
-
-
-
         registrationsRepository.save(registrations);
-    }
-
-    public void deleteRegistration(Integer id) {
-        Registrations entity = new Registrations();
-        entity.setId(id);
-        registrationsRepository.delete(entity);
-    }
-
-    @Transactional
-    public Registrations registrationById(Integer id) {
-        return registrationsRepository.getOne(id);
     }
 
     @Transactional
     public void changeRegistration(Integer id, AddRegistrationRequest request) {
+
+        Registrations existingRegistration = registrationsRepository.findByDentistIdAndDateAndTime(request.getDentistId(), request.getDate(), request.getTime());
+        if (existingRegistration != null) {
+            throw new DentistException("This date and time is already taken!");
+        }
+
         Registrations registrations = new Registrations();
         registrations.setId(id);
         registrations.setIdCardNr(request.getIdCardNr());
@@ -90,6 +80,17 @@ public class RegistrationsService {
         registrations.setDentist(dentist);
         registrationsRepository.save(registrations);
 
+    }
+
+    public void deleteRegistration(Integer id) {
+        Registrations entity = new Registrations();
+        entity.setId(id);
+        registrationsRepository.delete(entity);
+    }
+
+    @Transactional
+    public Registrations registrationById(Integer id) {
+        return registrationsRepository.getOne(id);
     }
 
 }
