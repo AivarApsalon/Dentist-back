@@ -19,8 +19,10 @@ Database: H2
 Go to browser:  http://localhost:8085/h2-console
 Type into terminal: SELECT * FROM DENTIST 
 There you see Table: DENTIST
-Important: Please add at least one id and one dentist into that table, before making requests from database!
 ```
+
+**Important: Please add at least one id and one dentist into that table, before making requests from database!**
+
 
 ```bash
 In database is used 2 tables:
