@@ -1,23 +1,88 @@
-# Project_Dentist_App
-
-2) ETAPP 2 - Registreeringute vaatamise vaade
-2.1) Lisa rakendusele funktsionaalsus registreeringute vaatamiseks. Tekita menüüsse uus menüüpunkt ning sellele vajutades kuva kasutajale kõik süsteemi lisatud registreeringud.
-3) ETAPP 3 – Kustutamine, muutmine, saadavuse kontroll
-3.1) Lisa registreeringute detail vaatele võimalus registreeringuid kustutada
-3.2) Lisa registreeringute detail vaatele võimalus registreeringuid muuta
-3.3) Lisa registreeringu esitamise vaatele funktsionaalsus broneeringu aegade kontrolliks - kui kasutaja üritab broneerida hambaarsti vastuvõtu aega, mis on juba kellegi teise poolt võetud või osaliselt kattuv, siis lisa vastav veateade ja keela broneeringu edastamine.
-4) ETAPP 4 - Otsing
-4.1) Muuda registreeringute vaate vormi selliselt, et tekiks otsingu funktsionaalsus ning otsingu tulemustele vajutades avaneks detailne registreeringu vaate vorm.
-5) ETAPP 5 – Kui see pole veel päris see..
-5.1) Kui sul on ideid, kuidas antud rakendust ilusamaks / paremaks / ägedamaks muuta, siis see on koht, kus neid oskuseid näidata saad : )
-Tagasisaatmise juhend:
-Oma kood lae mõnda vabalt kättesaadavasse versioonihalduse süsteemi – näiteks GitHubi või BitBucketisse. Juhul kui sul on oma veebiserver või dropbox, võid ka koodi kokku pakitult sinna laadida ja saata meile lingi – sinu vaba valik. Veendu, et link oleks meile kättesaadav. Veendu, et üles on laetud ainult kõik vajalik projekti kompileerumiseks ja käivitamiseks. Vajadusel lisa dokumentatsioon rakenduse kasutamiseks.
-
-
 ## Steps to Setup
 
 **1. Clone the application**
-
 ```bash
-git clone https://github.com/coma123/Spring-Boot-Blog-REST-API.git
+https://github.com/AivarApsalon/Dentist-back
 ```
+
+**2. Run**
+```bash
+src / main / java / com / example / demo / DemoApplication 
+```
+
+**3. Database**
+```bash
+Database: H2
+```
+
+
++ Go to browser:  `http://localhost:8085/h2-console`
++ Type into terminal: `SELECT * FROM DENTIST`
++ There you see Table: `DENTIST`
+
+**Important: Please add into DENTIST table at least one id and one dentist, before making requests from database!**
+
+
+**5. Endpoints**
+
+
+| Method | Url | Description |
+| ------ | --- | ----------- | 
+| GET    | http://localhost:8085/dentist/dentist-list | Get a list of dentists from database | 
+| GET    | http://localhost:8085/dentist/registrations | Get all registrations from database | 
+| GET    | http://localhost:8085/dentist/registrations-by-dentist-id/{dentist_id} | Get all registrations by dentist id | 
+| POST   | http://localhost:8085/dentist/add-registration | Add new registration |
+| PUT    | http://localhost:8085/dentist/change-registration/{registration_id} | Change existing registration |
+| DELETE | http://localhost:8085/dentist/delete-registration/{registration_id} | Delete existing registration |
+
+
+
+#### Samples of URLs with valid JSON Request Bodys
+
+Get Dentist List
+```bash
+http://localhost:8085/dentist/dentist-list
+```
+
+Get All Registrations
+```bash
+http://localhost:8085/dentist/registrations
+```
+
+Get Registrations By Dentist Id
+```bash
+http://localhost:8085/dentist/registrations-by-dentist-id/2
+```
+
+Add Registration
+```bash
+http://localhost:8085/dentist/add-registration
+
+{
+    "date": "2021-03-01",
+    "time": "10:00",
+    "firstName": "John",
+    "lastName": "Smith",
+    "idCardNr": "AA000",
+    "dentistId" : 2
+}
+```
+
+Change Registration
+```bash
+http://localhost:8085/dentist/change-registration/2
+{
+    "date": "2020-11-05",
+    "time": "14:00",
+    "firstName": "John",
+    "lastName": "Smith",
+    "idCardNr": "AA000",
+    "dentistId" : 2
+}
+```
+
+Delete Registration
+```bash
+http://localhost:8085/dentist/delete-registration/2
+```
+
