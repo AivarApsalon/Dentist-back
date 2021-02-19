@@ -19,9 +19,9 @@ Database: H2
 + Go to browser:  `http://localhost:8085/h2-console`
 + In Login window click: `Connect`
 
-**Important: Please add into DENTIST table at least one id and one dentist, before making requests from database!**
+**Important: Please add into DENTIST table at least one dentist, before making requests from database!**
 
-To do that, insert to terminal, for example:
+To do that, insert into terminal, for example:
 ```bash
 INSERT INTO DENTIST (DENTIST_NAME) VALUES ('M.Kask');
 INSERT INTO DENTIST (DENTIST_NAME) VALUES ('O.Kuusk');
@@ -29,7 +29,6 @@ INSERT INTO DENTIST (DENTIST_NAME) VALUES ('N.Palm');
 INSERT INTO DENTIST (DENTIST_NAME) VALUES ('S.Pihl');
 INSERT INTO DENTIST (DENTIST_NAME) VALUES ('T.Kadak');
 ```
-
 
 **After that, open front-end application from:  https://github.com/AivarApsalon/Dentis-front  and follow README.md**
 
