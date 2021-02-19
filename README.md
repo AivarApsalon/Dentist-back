@@ -19,6 +19,7 @@ Database: H2
 + Go to browser:  `http://localhost:8085/h2-console`
 + Type into terminal: `SELECT * FROM DENTIST`
 + There you see Table: `DENTIST`
++ In Login window click: `Connect`
 
 **Important: Please add into DENTIST table at least one id and one dentist, before making requests from database!**
 
