@@ -22,6 +22,7 @@ Database: H2
 
 **Important: Please add into DENTIST table at least one id and one dentist, before making requests from database!**
 
+**After that, open front-end application from:  https://github.com/AivarApsalon/Dentis-front  and follow README.md**
 
 **5. Endpoints**
 
