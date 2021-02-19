@@ -10,21 +10,23 @@ https://github.com/AivarApsalon/Dentist-back
 src / main / java / com / example / demo / DemoApplication 
 ```
 
-**3. Create PostgreSQL database**
+**3. Database**
 ```bash
-- KÜSIMUS SIIMULE ANDMEBAASI KOHTA!
+Database: H2
 ```
 
 ```bash
-In database is used 2 tables:
+Go to browser:  **http://localhost:8085/h2-console**
+Type into terminal: SELECT * FROM DENTIST 
+There you see Table: DENTIST
+**Important: Please add at least one id and one dentist into that table, before making requests from database!**
 ```
-```bash
+
+In database is used 2 tables:
+
 + table name: dentist
 - Rows: id, dentist_name
 
-Important: Please add at least one dentist into that table, before making requests from database!
-```
-```bash
 + table name: registrations
 - Rows: id, date, time, first_name, last_name, id_card_nr, dentist_id
 ```
