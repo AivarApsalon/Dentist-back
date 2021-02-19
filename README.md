@@ -23,16 +23,6 @@ Database: H2
 **Important: Please add at least one id and one dentist into that table, before making requests from database!**
 
 
-```bash
-In database is used 2 tables:
-
-+ table name: dentist
-- Rows: id, dentist_name
-
-+ table name: registrations
-- Rows: id, date, time, first_name, last_name, id_card_nr, dentist_id
-```
-
 **5. Endpoints**
 
 
