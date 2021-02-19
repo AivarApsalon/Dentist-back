@@ -15,12 +15,10 @@ src / main / java / com / example / demo / DemoApplication
 Database: H2
 ```
 
-```bash
-Go to browser:  
-**http://localhost:8085/h2-console**
-Type into terminal: SELECT * FROM DENTIST 
+
+Go to browser:  **http://localhost:8085/h2-console**
+Type into terminal: **SELECT * FROM DENTIST** 
 There you see Table: DENTIST
-```
 
 **Important: Please add at least one id and one dentist into that table, before making requests from database!**
 
